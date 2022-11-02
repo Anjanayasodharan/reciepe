@@ -8,7 +8,8 @@ while True:
     print("3 search reciepe")
     print("4 update reciepe")    
     print("5 delete reciepe")
-    print("6 exit")
+    print("6 Total price")
+    print("7 exit")
     choice = int(input('enter an option:'))
     if(choice==1):
         print('reciepe enter selected')
@@ -59,4 +60,11 @@ while True:
         mydb.commit()
         print("data deleted succesfully")
     elif(choice==6):
+        print('total price')
+        sql = 'SELECT SUM(`Price`) FROM `reciepe`'
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+    
+    elif(choice==7):
         break
