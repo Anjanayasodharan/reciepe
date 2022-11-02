@@ -10,7 +10,8 @@ while True:
     print("5 delete reciepe")
     print("6 Total price")
     print('7 total price for each category')
-    print("8 exit")
+    print('8 Starting letter of name of recepie ')
+    print("9 exit")
     choice = int(input('enter an option:'))
     if(choice==1):
         print('reciepe enter selected')
@@ -78,4 +79,18 @@ while True:
 
         print(result)
     elif(choice==8):
+        
+
+        print('Starting letter of name of recepi')
+
+        a = input('Enter the first character of the name : ')
+
+        sql = "SELECT * FROM `reciepe` WHERE `Name` LIKE '%"+a+"%'"
+
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        print(result)
+    elif(choice==9):
         break
