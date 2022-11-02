@@ -16,7 +16,7 @@ while True:
         category  = input('enter the category')
         taste = input('enter the taste')
         price = input('enter the price ')
-        sql = 'INSERT INTO `reciepe`( `name`,`category`,`taste`, `price`) VALUES (%s,%s,%s,%s)'
+        sql = 'INSERT INTO `reciepe`( `name`,`category`,`taste`,`price`) VALUES (%s,%s,%s,%s)'
 
         data = (name,category,taste,price)
         mycursor.execute(sql , data)
@@ -52,9 +52,9 @@ while True:
         mydb.commit()
         print("updated succusfully")
     elif(choice==5):
-        print('delete the category')
-        category = input('enter the category to be deleting: ')
-        sql = "DELETE FROM `reciepe` WHERE `category`='"+category+"'"
+        print('delete the name')
+        name = input('enter the name to be deleting: ')
+        sql = "DELETE FROM `reciepe` WHERE `name`='"+name+"'"
         mycursor.execute(sql)
         mydb.commit()
         print("data deleted succesfully")
