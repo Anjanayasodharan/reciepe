@@ -9,7 +9,8 @@ while True:
     print("4 update reciepe")    
     print("5 delete reciepe")
     print("6 Total price")
-    print("7 exit")
+    print('7 total price for each category')
+    print("8 exit")
     choice = int(input('enter an option:'))
     if(choice==1):
         print('reciepe enter selected')
@@ -67,4 +68,14 @@ while True:
         print(result)
     
     elif(choice==7):
+        print('total price for each category')
+
+        sql = "SELECT `category`, SUM(`price`) FROM `reciepe` GROUP BY `category`"
+
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        print(result)
+    elif(choice==8):
         break
